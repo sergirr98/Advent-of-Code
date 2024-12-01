@@ -53,7 +53,7 @@ if __name__ == "__main__":
     print(partOne())
     
     # startTime = perf_counter()
-    print(partTwo())
+    # print(partTwo())
     # stopTime = perf_counter()
     
     # print(stopTime - startTime)
