@@ -50,7 +50,7 @@ if __name__ == "__main__":
             leftList.append(l)
             rightList.append(r)
     
-    print(partOne())
+    print(f'The answer for part one is: {partOne()}')
     
     # startTime = perf_counter()
     # print(partTwo())
@@ -59,7 +59,7 @@ if __name__ == "__main__":
     # print(stopTime - startTime)
     
     # startTime = perf_counter()
-    print(partTwoDict())
+    print(f'The answer for part two is: {partTwoDict()}')
     # stopTime = perf_counter()
     
     # print(stopTime - startTime)
