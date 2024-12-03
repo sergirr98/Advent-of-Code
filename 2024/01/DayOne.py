@@ -43,7 +43,7 @@ def partTwoDict():
 
 if __name__ == "__main__":
     
-    with open('./2024/Day one/input.txt', 'r') as file:
+    with open('./2024/01/input.txt', 'r') as file:
         for line in file:
             l, r = line.split()
             l, r = int(l), int(r)

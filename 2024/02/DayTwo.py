@@ -67,7 +67,7 @@ def checkValidity(line):
 
 if __name__ == "__main__":
     
-    with open('./2024/Day two/input.txt', 'r') as file:
+    with open('./2024/02/input.txt', 'r') as file:
         for line in file:
             l = line.split()
             l = [int(x) for x in l]
