@@ -44,8 +44,8 @@ def checkValidity(line):
     des = False
     
     for i in range(len(line) - 1):
-        a = int(line[i])
-        b = int(line[i + 1])
+        a = line[i]
+        b = line[i + 1]
         
         if a < b:
             asc = True
@@ -69,7 +69,9 @@ if __name__ == "__main__":
     
     with open('./2024/Day two/input.txt', 'r') as file:
         for line in file:
-            listOfLines.append(line.split())
+            l = line.split()
+            l = [int(x) for x in l]
+            listOfLines.append(l)
     
     print(f'The answer for part one is: {partOne()}')
     print(f'The answer for part two is: {partTwo()}')
