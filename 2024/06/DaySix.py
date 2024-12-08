@@ -99,7 +99,6 @@ def checkLoop(row, col, dir):
         if oob:
             return False
     
-    
     return True
         
 def partOne():
@@ -129,7 +128,7 @@ def partTwo():
     
     return answer
 
-# HEAVELY inspired by liamasman solution at https://github.com/liamasman/advent-of-code-2024/blob/main/src/day_six.py
+# HEAVILY inspired by liamasman solution at https://github.com/liamasman/advent-of-code-2024/blob/main/src/day_six.py
 if __name__ == "__main__":
     print(f'The answer for part one is: {partOne()}')
     print(f'The answer for part two is: {partTwo()}')

@@ -77,7 +77,7 @@ def resultOpCon(testValue, valueTillThisPoint, line, operation):
 def partOne():
     answer = 0
     
-    generateLines() 
+    generateLines()
 
     for line in lines:
         testValue = line.pop(0)
