@@ -1,4 +1,5 @@
 from enum import Enum
+from time import perf_counter
 
 class Block(Enum):
     Empty = -1
@@ -117,4 +118,9 @@ if __name__ == "__main__":
                 elems.append(int(line[i]))
     
     print(f'The answer for part one is: {partOne()}')
+    
+    # startTime = perf_counter()
     print(f'The answer for part two is: {partTwo()}')
+    # stopTime = perf_counter()
+    
+    # print(stopTime - startTime)
