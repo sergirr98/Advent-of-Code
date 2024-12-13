@@ -138,8 +138,6 @@ def getFenceCostPartTwo(row, col, plant, visitedPlants):
     
     sides += getPeriPartTwo(row, col, plant, visitedPlantsPeri, Dir.UP) + getPeriPartTwo(row, col, plant, visitedPlantsPeri, Dir.RIGHT) + getPeriPartTwo(row, col, plant, visitedPlantsPeri, Dir.DOWN) + getPeriPartTwo(row, col, plant, visitedPlantsPeri, Dir.LEFT)
     
-    print(plant, area, sides)
-    
     return area * sides
 
 def partOne():
