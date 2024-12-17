@@ -123,8 +123,5 @@ def partTwo():
     return int(answer)
 
 if __name__ == "__main__":
-    
-    
-    
     print(f'The answer for part one is: {partOne()}')
     print(f'The answer for part two is: {partTwo()}')
