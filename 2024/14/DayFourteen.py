@@ -88,7 +88,7 @@ def partTwo():
         xDev = statistics.stdev(xPos)
         yDev = statistics.stdev(yPos)
         
-        # The 40 is an arbitrary number I decied on after testing AKA I pulled it out of my ass idk if it works on other inputs
+        # The 40 is an arbitrary number I decided on after testing AKA I pulled it out of my ass idk if it works on other inputs
         if xDev + yDev < 40:
             break
         
