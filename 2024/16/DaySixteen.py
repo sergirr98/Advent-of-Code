@@ -9,6 +9,19 @@ class Dir(Enum):
     
     def __lt__(self, other):
         return self.value < other.value
+    
+    def flip(self):
+        if self == Dir.UP:
+            return Dir.DOWN
+        
+        if self == Dir.DOWN:
+            return Dir.UP
+        
+        if self == Dir.RIGHT:
+            return Dir.LEFT
+        
+        if self == Dir.LEFT:
+            return Dir.RIGHT
 
 class Cell(Enum):
     Empty = auto()
@@ -74,13 +87,14 @@ def printMap():
 
         print()
 
-def Dijkstra(startingRow, strartingCol, startingDir):
+def Dijkstra(startingRow, strartingCol, startingDirs):
     
     dist = {}
     pq = []
     
-    dist[(startingRow, strartingCol, startingDir)] = 0
-    heapq.heappush(pq, (0, startingRow, strartingCol, startingDir))
+    for dir in startingDirs:
+        dist[(startingRow, strartingCol, dir)] = 0
+        heapq.heappush(pq, (0, startingRow, strartingCol, dir))
     
     while pq:
         (d, row, col, dir) = heapq.heappop(pq)
@@ -113,7 +127,7 @@ def partOne():
     
     startingRow, startingCol, endRow, endCol = generateMap()
     
-    dist = Dijkstra(startingRow, startingCol, Dir.RIGHT)
+    dist = Dijkstra(startingRow, startingCol, [Dir.RIGHT])
     
     for dir in Dir:
         if (endRow, endCol, dir) in dist:
@@ -122,7 +136,30 @@ def partOne():
     return answer
 
 def partTwo():
-    return
+    answer = 0
+    
+    startingRow, startingCol, endRow, endCol = generateMap()
+    
+    distStart = Dijkstra(startingRow, startingCol, [Dir.RIGHT])
+    distEnd = Dijkstra(endRow, endCol, [Dir.UP, Dir.RIGHT, Dir.DOWN, Dir.LEFT])
+    
+    optimal = partOne()
+    
+    result = set()
+    
+    for row in range(len(map)):
+        for col in range(len(map[row])):
+            for dir in Dir:
+                stateFromStart = (row, col, dir)
+                stateFromEnd = (row, col, dir.flip())
+                
+                if stateFromStart in distStart and stateFromEnd in distEnd:
+                    if distStart[stateFromStart] + distEnd[stateFromEnd] == optimal:
+                        result.add((row, col))
+    
+    answer = len(result)
+    
+    return answer
 
 if __name__ == "__main__":
     print(f'The answer for part one is: {partOne()}')
