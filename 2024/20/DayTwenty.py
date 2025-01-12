@@ -157,7 +157,6 @@ def partTwo():
                 man = manhattan(startCell, endCell)
                 
                 if man < 21:
-                    newTime = 1_000_000_000_000
                     newTime = distFromStart[startCell] + distFromEnd[endCell] + man
                     
                     if normalTime - newTime > 99:
