@@ -151,17 +151,17 @@ def partTwo():
     
     path = getOptimalPath(distFromStart, distFromEnd, normalTime)
     
-    for startCell in path:        
+    for startCell in path:
         for endCell in path:            
             if distFromStart[startCell] < distFromStart[endCell]:
                 man = manhattan(startCell, endCell)
-                newTime = 1_000_000_000_000
                 
-                if manhattan(startCell, endCell) < 21:
+                if man < 21:
+                    newTime = 1_000_000_000_000
                     newTime = distFromStart[startCell] + distFromEnd[endCell] + man
                     
-                if normalTime - newTime > 99:
-                    answer += 1
+                    if normalTime - newTime > 99:
+                        answer += 1
     
     return answer
 
