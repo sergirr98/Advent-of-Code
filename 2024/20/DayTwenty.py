@@ -152,7 +152,7 @@ def partTwo():
     path = getOptimalPath(distFromStart, distFromEnd, normalTime)
     
     for startCell in path:
-        for endCell in path:            
+        for endCell in distFromEnd:
             if distFromStart[startCell] < distFromStart[endCell]:
                 man = manhattan(startCell, endCell)
                 
